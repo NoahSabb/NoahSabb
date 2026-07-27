@@ -9,7 +9,7 @@
             ▟███████████▛▀▀    ▐███████████████▙                ──────────────────────────────────
             ████████▛▀▛▀       ▝████████████████▙               OS:          macOS 26 Tahoe
            ▐████████▘           ▚█▟▟█████████████▖              Host:        Stanford University #GoCardinal
-            ███████▘             ▝▀      ███████▛               Kernel:      <your major>
+            ███████▘             ▝▀      ███████▛               Kernel:      Computer Engineering
            ▐██████▘ ▗▄                ▄  ▀██████▖               Shell:       AI/ML Engineer
            ▝█████▘ ▛▀▀▀▀▀██▖    ▗████▀▀██ ▐█████▘               Location:    Austin, TX
             ▝▜██▛   ▗▄▗▟▄ ▄     ▗▖▗▗▄▄▗▖▝▘ ███▀
