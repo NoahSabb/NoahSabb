@@ -7,7 +7,8 @@ SRC = "/Users/noahsabbavarapu/Downloads/OneMediaCo_HB 261_resize _Original.jpg"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "card"
 
 # --- face params (v3, locked) ---
-COLS, SAT, CON, BRT, BGT = 220, 1.3, 1.35, 1.22, 12
+COLS = int(sys.argv[3]) if len(sys.argv) > 3 else 220
+SAT, CON, BRT, BGT = 1.3, 1.35, 1.22, 12
 RAMP = " .:-=+*#%@"
 FONT_PATH = "/System/Library/Fonts/Menlo.ttc"
 
@@ -37,6 +38,14 @@ BLOCKS = ["#0d1117", "#f85149", "#39d353", "#d29922",
 
 # ---------- build face grid ----------
 img = Image.open(SRC).convert("RGB")
+# auto-crop away the black margins so the face fills the frame
+_g = img.convert("L").point(lambda p: 255 if p > 24 else 0)
+_bb = _g.getbbox()
+if _bb:
+    pad = 8
+    l, t, r, b = _bb
+    img = img.crop((max(0, l-pad), max(0, t-pad),
+                    min(img.width, r+pad), min(img.height, b+pad)))
 img = ImageEnhance.Brightness(img).enhance(BRT)
 img = ImageEnhance.Contrast(img).enhance(CON)
 img = ImageEnhance.Color(img).enhance(SAT)
