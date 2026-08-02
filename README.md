@@ -9,7 +9,7 @@
  ▀▀▀▀▀▜█▌ ▐███████████▌ ▐█▛▀▀▀▀▀
       ▐█▌ ▐███████████▌ ▐█▌         Languages:   Python, C/C++, Verilog, Dart, TS
  ▄▄▄▄▄▟█▌ ▐███████████▌ ▐█▙▄▄▄▄▄    ML Stack:    PyTorch, QLoRA, GRPO, vLLM
- ▀▀▀▀▀▜█▌  ▀▀▀▀▀▀▀▀▀▀▀  ▐█▛▀▀▀▀▀    Focus:       LLM post-training, agent evals
+ ▀▀▀▀▀▜█▌  ▀▀▀▀▀▀▀▀▀▀▀  ▐█▛▀▀▀▀▀    
       ▐█▙▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▟█▌
       ▝▀▜███████████████▛▀▘         HuggingFace: huggingface.co/Noahsabb
          ▝▀ ▝▀ ▝▀ ▝▀ ▝▀             LinkedIn:    https://www.linkedin.com/in/noah-sabbavarapu-915b01335/
