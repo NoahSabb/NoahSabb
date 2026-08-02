@@ -11,8 +11,8 @@ Target repo: `NoahSabb/NoahSabb` (public, terminal-themed neofetch card already 
 
 | Idea | Source | Type | External call at render | Status |
 |------|--------|------|-------------------------|--------|
-| Neofetch ASCII card | jeantimex/neofetch-profile | Hosted embed / hand-authored | none (hand-authored version already in repo) | In repo |
-| Pac-Man / arcade contribution graph | abozanona/pacman-contribution-graph | GitHub Action | none (self-hosted SVG) | Added — candidate |
+| Neofetch ASCII card | jeantimex/neofetch-profile (layout only) | Hand-authored block art | none (fenced code block in README) | In repo — chip motif |
+| Pac-Man / arcade contribution graph | abozanona/pacman-contribution-graph | GitHub Action | none (self-hosted SVG) | Candidate — not yet wired up |
 | 3D isometric contribution skyline | yoshi389111/github-profile-3d-contrib | GitHub Action | none (self-hosted SVG) | Added — candidate |
 | Snake eating contribution grid | Platane/snk | GitHub Action | none (self-hosted SVG) | Candidate |
 | Playable chess | timburgan/timburgan style | GitHub Action + issues | none | Candidate |
