@@ -8,7 +8,7 @@
  ▄▄▄▄▄▟█▌ ▐███████████▌ ▐█▙▄▄▄▄▄    Location:    Austin, TX
  ▀▀▀▀▀▜█▌ ▐███████████▌ ▐█▛▀▀▀▀▀
       ▐█▌ ▐███████████▌ ▐█▌         Languages:   Python, C/C++, Verilog, Dart, TS
- ▄▄▄▄▄▟█▌ ▐███████████▌ ▐█▙▄▄▄▄▄    ML Stack:    PyTorch, QLoRA, GRPO, vLLM
+ ▄▄▄▄▄▟█▌ ▐███████████▌ ▐█▙▄▄▄▄▄    
  ▀▀▀▀▀▜█▌  ▀▀▀▀▀▀▀▀▀▀▀  ▐█▛▀▀▀▀▀    
       ▐█▙▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▟█▌
       ▝▀▜███████████████▛▀▘         HuggingFace: huggingface.co/Noahsabb
