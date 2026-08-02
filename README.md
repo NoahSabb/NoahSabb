@@ -12,7 +12,7 @@
  ▀▀▀▀▀▜█▌  ▀▀▀▀▀▀▀▀▀▀▀  ▐█▛▀▀▀▀▀    Focus:       LLM post-training, agent evals
       ▐█▙▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▟█▌
       ▝▀▜███████████████▛▀▘         HuggingFace: huggingface.co/Noahsabb
-         ▝▀ ▝▀ ▝▀ ▝▀ ▝▀             LinkedIn:    <fill in>
+         ▝▀ ▝▀ ▝▀ ▝▀ ▝▀             LinkedIn:    https://www.linkedin.com/in/noah-sabbavarapu-915b01335/
                                     Portfolio:   <fill in>
 ```
 
