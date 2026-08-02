@@ -1,4 +1,4 @@
-<!-- neofetch-style card: ASCII portrait + stats (built via scratchpad/neofetch_card.py) -->
+<!-- neofetch-style card: ASCII portrait + stats (regenerate via tools/neofetch_card.py) -->
 <p align="center">
   <img src="./assets/neofetch-card.svg" alt="Noah Sabbavarapu — neofetch profile card" width="100%">
 </p>
