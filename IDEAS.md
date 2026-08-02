@@ -19,6 +19,11 @@ Target repo: `NoahSabb/NoahSabb` (public, terminal-themed neofetch card already 
 | Terminal-themed stats card | github-readme-stats (Dracula/Tokyonight) | Hosted embed | third-party Vercel | Candidate |
 | Spotify now-playing | kittinan/spotify-github-profile | Hosted embed | third-party Vercel + Spotify auth | Candidate |
 
+> Note: upstream `jeantimex/neofetch-profile` is a **hosted Vercel API** that converts your
+> avatar to ASCII server-side (`![](https://neofetch-profile.vercel.app/api?username=...)`),
+> so it *does* make an external call at render. Only its layout is borrowed here — the card
+> in README.md is hand-authored Unicode Block Elements (U+2580–U+259F), no external call.
+
 ## Reference profile to study
 - salesp07/salesp07 — typing header + snake + stats/streak + skillicons combo
 
