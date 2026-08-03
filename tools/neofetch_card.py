@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build a neofetch-style card: ASCII face (left) + colored stats (right) as one SVG + PNG preview."""
 import sys, html
-from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
 SRC = "/Users/noahsabbavarapu/Downloads/OneMediaCo_HB 261_resize _Original.jpg"
 OUT = sys.argv[1] if len(sys.argv) > 1 else "card"
@@ -91,8 +91,23 @@ else:
     SVGW = stats_x + stats_w + M
     SVGH = M + max(face_h, stats_h) + M
 
+# ---------- optional glow/haze behind the face ----------
+GLOW = sys.argv[4] if len(sys.argv) > 4 and sys.argv[4] != "none" else None
+if GLOW:
+    gcx = face_x + face_w * 0.50
+    gcy = face_y + face_h * 0.44
+    grx = face_w * 0.54
+    gry = face_h * 0.46
+
 # ---------- PNG preview ----------
 canvas = Image.new("RGB", (int(SVGW), int(SVGH)), BG)
+if GLOW:
+    gr, gg, gb = (int(GLOW[i:i+2], 16) for i in (1, 3, 5))
+    glow_layer = Image.new("RGBA", canvas.size, (0, 0, 0, 0))
+    ImageDraw.Draw(glow_layer).ellipse(
+        [gcx-grx, gcy-gry, gcx+grx, gcy+gry], fill=(gr, gg, gb, 150))
+    glow_layer = glow_layer.filter(ImageFilter.GaussianBlur(radius=int(face_w*0.10)))
+    canvas = Image.alpha_composite(canvas.convert("RGBA"), glow_layer).convert("RGB")
 d = ImageDraw.Draw(canvas)
 fface = ImageFont.truetype(FONT_PATH, FF)
 fstat = ImageFont.truetype(FONT_PATH, SF)
@@ -128,6 +143,15 @@ P = [f'<svg xmlns="http://www.w3.org/2000/svg" width="{SVGW:.0f}" height="{SVGH:
      f'viewBox="0 0 {SVGW:.0f} {SVGH:.0f}" font-family="Menlo, \'Courier New\', monospace" '
      f'xml:space="preserve">',
      f'<rect width="100%" height="100%" rx="10" fill="{BG}"/>']
+if GLOW:
+    P.append(
+        f'<defs><radialGradient id="glow" gradientUnits="userSpaceOnUse" '
+        f'cx="{gcx:.0f}" cy="{gcy:.0f}" r="{max(grx,gry):.0f}">'
+        f'<stop offset="0" stop-color="{GLOW}" stop-opacity="0.55"/>'
+        f'<stop offset="0.6" stop-color="{GLOW}" stop-opacity="0.22"/>'
+        f'<stop offset="1" stop-color="{GLOW}" stop-opacity="0"/>'
+        f'</radialGradient></defs>'
+        f'<ellipse cx="{gcx:.0f}" cy="{gcy:.0f}" rx="{grx:.0f}" ry="{gry:.0f}" fill="url(#glow)"/>')
 # face
 P.append(f'<g font-size="{FF}">')
 for y, line in enumerate(grid):
