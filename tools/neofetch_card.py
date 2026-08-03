@@ -38,14 +38,18 @@ BLOCKS = ["#0d1117", "#f85149", "#39d353", "#d29922",
 
 # ---------- build face grid ----------
 img = Image.open(SRC).convert("RGB")
-# auto-crop away the black margins so the face fills the frame
+# auto-crop away black margins, then tighten to the head (drop shoulders/side space)
 _g = img.convert("L").point(lambda p: 255 if p > 24 else 0)
 _bb = _g.getbbox()
 if _bb:
-    pad = 8
     l, t, r, b = _bb
-    img = img.crop((max(0, l-pad), max(0, t-pad),
-                    min(img.width, r+pad), min(img.height, b+pad)))
+    H, W = b - t, r - l
+    cx = (l + r) // 2
+    half = int(W * 0.38)                 # trim side space -> head width
+    top = max(0, t - int(H * 0.02))
+    bot = t + int(H * 0.74)              # drop shoulders
+    img = img.crop((max(0, cx - half), top,
+                    min(img.width, cx + half), min(img.height, bot)))
 img = ImageEnhance.Brightness(img).enhance(BRT)
 img = ImageEnhance.Contrast(img).enhance(CON)
 img = ImageEnhance.Color(img).enhance(SAT)
