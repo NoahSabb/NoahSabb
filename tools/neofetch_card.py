@@ -30,7 +30,7 @@ STATS = [
     ("Languages", "Python, C/C++, Verilog, Dart, TS"),
     ("ML Stack",  "PyTorch, QLoRA, GRPO, vLLM"),
     ("Focus",     "LLM post-training, agent evals"),
-    ("Hobbies",   "<fill in>"),
+    ("Hobbies",   "lifting, running, guitar"),
 ]
 KEYW = max(len(k) for k, _ in STATS)
 BLOCKS = ["#0d1117", "#f85149", "#39d353", "#d29922",
